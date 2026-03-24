@@ -24,7 +24,8 @@ app.get("/", (req, res) => {
 
 const PORT = process.env.PORT || 5000;
 
-/* 🔥 IMPORTANT FIX */
+/* 
+IMPORTANT FIX */
 const startServer = async () => {
   try {
     await connectDB();   // wait for DB
