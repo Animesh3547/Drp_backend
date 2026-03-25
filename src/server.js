@@ -5,7 +5,7 @@ import { connectDB } from "./config/db.js";
 import healthRoutes from "./routes/healthRoutes.js";
 import sensorRoutes from "./routes/sensorRoutes.js";
 import systemRoutes from "./routes/systemRoutes.js";
-import { startSensorSimulation } from "./services/sensorSimulator.js";
+// import { startSensorSimulation } from "./services/sensorSimulator.js";
 
 dotenv.config();
 
@@ -30,7 +30,7 @@ const startServer = async () => {
   try {
     await connectDB();   // wait for DB
 
-    startSensorSimulation();  // start AFTER DB
+    // startSensorSimulation();  // start AFTER DB
 
     app.listen(PORT, "0.0.0.0", () => {
       console.log(`Server running on port ${PORT}`);
