@@ -3,12 +3,13 @@ import SensorLog from "../models/SensorLog.js";
 /* POST sensor data */
 export const createSensorLog = async (req, res) => {
   try {
-    const { gas, temperature, current, rpm } = req.body;
+    const { gas, temperature, current, rpm ,vibration} = req.body;
 
     const log = new SensorLog({
       gas,
       temperature,
       current,
+      vibration,
       rpm
     });
 
