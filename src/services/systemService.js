@@ -31,7 +31,7 @@ export function computeSystemState(sensor) {
     systemHealth = "Hazard";
   }
 
-  if (rpm === 0 && current > 0.3) {
+  if (rpm === 0 && current > 0.8) {
     systemHealth = "Fan Fault";
   }
 
