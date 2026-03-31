@@ -16,7 +16,7 @@ export function computeSystemState(sensor) {
   const { gas, temperature, rpm, current } = sensor;
 
   /* FAN STATE */
-  let fanState = rpm > 0 ? "ON" : "OFF";
+  let fanState = temperature > 28 ? "ON" : "OFF";
 
   /* VENTILATION SCORE */
   let ventilationScore = Math.min(
