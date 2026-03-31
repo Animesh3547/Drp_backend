@@ -3,13 +3,23 @@ import SensorLog from "../models/SensorLog.js";
 /* POST sensor data */
 export const createSensorLog = async (req, res) => {
   try {
+
+    console.log("Incoming:", req.body); // 🔍 FULL PAYLOAD LOG
+
     const {
-      gas = 0,
-      temperature = 0,
-      vibration = 0,
-      current = 0,
-      rpm = 0
+      gas,
+      temperature,
+      vibration,
+      current,
+      rpm
     } = req.body;
+
+    // 🔴 VALIDATION LOGGING (ADD HERE)
+    if (gas === undefined) console.log("⚠️ Gas missing");
+    if (temperature === undefined) console.log("⚠️ Temperature missing");
+    if (vibration === undefined) console.log("⚠️ Vibration missing");
+    if (current === undefined) console.log("⚠️ Current missing");
+    if (rpm === undefined) console.log("⚠️ RPM missing");
 
     const log = new SensorLog({
       gas: Number(gas) || 0,
@@ -24,8 +34,8 @@ export const createSensorLog = async (req, res) => {
     res.status(201).json(saved);
 
   } catch (error) {
-    console.error("ERROR:", error.message);
-    res.status(200).json({ msg: "Handled safely" }); // ✅ no crash
+    console.error("SAVE ERROR:", error.message);
+    res.status(200).json({ msg: "Handled safely" });
   }
 };
 
