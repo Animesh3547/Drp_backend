@@ -4,23 +4,27 @@ const sensorLogSchema = new mongoose.Schema(
   {
     gas: {
       type: Number,
-      required: true
+      default:0
     },
     temperature: {
       type: Number,
-      required: true
+     
+      default:0
     },
     vibration: {
       type: Number,
-      required: true
+     
+      default:0
     },
     current: {
       type: Number,
-      required: true
+  
+      default:0
     },
     rpm: {
       type: Number,
-      required: true
+   
+      default:0
     }
   },
   {
